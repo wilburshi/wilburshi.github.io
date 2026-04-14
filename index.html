@@ -93,6 +93,21 @@
     #about {
       padding-top: 6rem;
     }
+    .hero-layout {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 160px;
+      height: 160px;
+      border-radius: 3px;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(15%);
+    }
+    .hero-text { flex: 1; }
     .hero-name {
       font-size: clamp(2.4rem, 6vw, 3.8rem);
       font-weight: 400;
@@ -362,6 +377,8 @@
       .funding-item, .award-item { grid-template-columns: 1fr; gap: 0.2rem; }
       nav ul { gap: 1rem; flex-wrap: wrap; }
       .cv-block { flex-direction: column; align-items: flex-start; }
+      .hero-layout { flex-direction: column; gap: 1.5rem; }
+      .hero-photo { width: 120px; height: 120px; }
     }
   </style>
 </head>
@@ -381,33 +398,37 @@
 
 <main>
 
-  <!-- ABOUT -->
   <section id="about">
-    <p class="hero-title">Postdoctoral Fellow &nbsp;·&nbsp; Yale University</p>
-    <h1 class="hero-name">Weikang Shi</h1>
-    <div class="hero-bio">
-      <p>
-        I study how the primate brain computes strategic social decisions, with a focus on 
-        prosocial behavior in freely moving animals. My work integrates computational 
-        neuroethology, naturalistic behavioral paradigms, and large-scale neural recordings 
-        to link social strategies to their underlying neural computations.
-      </p>
-      <p>
-        My long-term goal is to build a circuit-level model of how the cortico-striatal 
-        circuit generates complex prosocial decisions.
-      </p>
-      <p>
-        I work with Drs. Steve Chang, Anirvan Nandy, and Monika Jadi at Yale's Wu Tsai Institute, 
-        supported by an NIH K99 Pathway to Independence Award.
-      </p>
+    <div class="hero-layout">
+      <img src="headshot.jpg" alt="Weikang Shi" class="hero-photo" />
+      <div class="hero-text">
+        <p class="hero-title">Postdoctoral Fellow &nbsp;·&nbsp; Yale University</p>
+        <h1 class="hero-name">Weikang Shi</h1>
+        <div class="hero-bio">
+          <p>
+            I study how the primate brain computes strategic social decisions, with a focus on 
+            prosocial behavior in freely moving animals. My work integrates computational 
+            neuroethology, naturalistic behavioral paradigms, and large-scale neural recordings 
+            to link social strategies to their underlying neural computations.
+          </p>
+          <p>
+            My long-term goal is to build a circuit-level model of how the cortico-striatal 
+            circuit generates complex prosocial decisions.
+          </p>
+          <p>
+            I work with Drs. Steve Chang, Anirvan Nandy, and Monika Jadi at Yale's Wu Tsai Institute, 
+            supported by an NIH K99 Pathway to Independence Award.
+          </p>
+        </div>
+        <p class="contact-line">
+          New Haven, CT &nbsp;·&nbsp;
+          <a href="mailto:weikang.w.shi@gmail.com">weikang.w.shi@gmail.com</a>
+          <a href="https://scholar.google.com/citations?user=vH-D6N0AAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a href="https://x.com/wilburshi2" target="_blank">X / Twitter</a>
+          <a href="https://bsky.app/profile/wilburshi.bsky.social" target="_blank">Bluesky</a>
+        </p>
+      </div>
     </div>
-    <p class="contact-line">
-      New Haven, CT &nbsp;·&nbsp;
-      <a href="mailto:weikang.w.shi@gmail.com">weikang.w.shi@gmail.com</a>
-      <a href="https://scholar.google.com/citations?user=vH-D6N0AAAAJ&hl=en" target="_blank">Google Scholar</a>
-      <a href="https://x.com/wilburshi2" target="_blank">X / Twitter</a>
-      <a href="https://bsky.app/profile/wilburshi.bsky.social" target="_blank">Bluesky</a>
-    </p>
   </section>
 
   <!-- RESEARCH -->
@@ -455,7 +476,7 @@
       <li class="pub-item">
         <p class="pub-authors">O.C. Meisner*, <strong>Weikang Shi*</strong>, A. Nair, G. Nandy, M.P. Jadi, A.S. Nandy, S.W.C. Chang &nbsp;<em>(*equal contribution)</em></p>
         <p class="pub-title">Diverse and flexible strategies enable successful cooperation in animal dyads</p>
-        <p class="pub-journal"><a href="https://doi.org/10.1016/j.cub.2025.07.028" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:400;">Current Biology</a>, 35.18 (2025)</p>
+        <p class="pub-journal"><a href="https://doi.org/10.1016/j.cub.2025.08.005" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:400;">Current Biology</a>, 35.18 (2025)</p>
       </li>
 
       <li class="pub-item">
@@ -485,7 +506,7 @@
       <li class="pub-item">
         <p class="pub-authors"><strong>Weikang Shi</strong>, S. Ballesta, C. Padoa-Schioppa</p>
         <p class="pub-title">Economic Choices with Simultaneous or Sequential Offers Rely on the Same Neural Circuit</p>
-        <p class="pub-journal"><a href="https://doi.org/10.1523/JNEUROSCI.1094-21.2021" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:400;">Journal of Neuroscience</a>, 42.1 (2022): 33–43</p>
+        <p class="pub-journal"><a href="https://doi.org/10.1523/JNEUROSCI.1265-21.2021" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:400;">Journal of Neuroscience</a>, 42.1 (2022): 33–43</p>
       </li>
 
       <li class="pub-item">
