@@ -124,12 +124,58 @@
       font-weight: 300;
       color: var(--muted);
       letter-spacing: 0.05em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      align-items: center;
     }
     .contact-line a {
       color: var(--accent);
       text-decoration: none;
     }
     .contact-line a:hover { text-decoration: underline; }
+
+    /* TALKS */
+    .talk-list { list-style: none; }
+    .talk-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .talk-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--muted);
+      padding-top: 0.15rem;
+    }
+    .talk-title {
+      font-size: 0.98rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .talk-detail {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+    .talk-badge {
+      display: inline-block;
+      margin-right: 0.5rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.05rem 0.35rem;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
 
     /* RESEARCH */
     .research-intro {
@@ -326,6 +372,8 @@
     <li><a class="name" href="#about">Weikang Shi</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#teaching">Teaching</a></li>
     <li><a href="#funding">Funding</a></li>
     <li><a href="#awards">Awards</a></li>
   </ul>
@@ -354,7 +402,11 @@
       </p>
     </div>
     <p class="contact-line">
-      New Haven, CT &nbsp;·&nbsp; <a href="mailto:weikang.w.shi@gmail.com">weikang.w.shi@gmail.com</a>
+      New Haven, CT &nbsp;·&nbsp;
+      <a href="mailto:weikang.w.shi@gmail.com">weikang.w.shi@gmail.com</a>
+      <a href="https://scholar.google.com/citations?user=vH-D6N0AAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://x.com/wilburshi2" target="_blank">X / Twitter</a>
+      <a href="https://bsky.app/profile/wilburshi.bsky.social" target="_blank">Bluesky</a>
     </p>
   </section>
 
@@ -443,6 +495,134 @@
       </li>
 
     </ul>
+  </section>
+
+  <!-- TALKS -->
+  <section id="talks">
+    <h2>Talks & Presentations</h2>
+    <ul class="talk-list">
+
+      <li class="talk-item">
+        <div class="talk-year">2026</div>
+        <div>
+          <p class="talk-title"><span class="talk-badge">Invited</span>Behavioral and Neural Mechanisms of Cooperation in Freely Moving Animals</p>
+          <p class="talk-detail">Princeton Neuroscience Institute Symposium · Princeton University</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2025</div>
+        <div>
+          <p class="talk-title">Neural Dynamics of Social Evidence Accumulation in Cooperative Interactions</p>
+          <p class="talk-detail">Society for Neuroeconomics · Boston, MA</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2025</div>
+        <div>
+          <p class="talk-title">Neural Dynamics of Social Evidence Accumulation in Cooperative Interactions</p>
+          <p class="talk-detail">Wu Tsai Institute Seminar · Yale University</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2024</div>
+        <div>
+          <p class="talk-title">Exploring Behavioral and Neural Dynamics in Cooperative Interactions Among Animal Dyads</p>
+          <p class="talk-detail">Society for Social Neuroscience · Tsukuba, Japan</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2023</div>
+        <div>
+          <p class="talk-title">Exploring Behavioral Dynamics in Cooperative Interactions Among Animal Dyads</p>
+          <p class="talk-detail">Wu Tsai Institute Seminar · Yale University</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2022</div>
+        <div>
+          <p class="talk-title">Neuronal Origins of Reduced Accuracy and Biases in Economic Choices Under Sequential Offers</p>
+          <p class="talk-detail">Society for Neuroeconomics · Arlington, VA</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2022</div>
+        <div>
+          <p class="talk-title"><span class="talk-badge">Invited</span>Economic Choices with Simultaneous or Sequential Offers Rely on the Same Neural Circuit</p>
+          <p class="talk-detail">Moreno-Bote Lab Journal Club · Universitat Pompeu Fabra, Barcelona</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2021</div>
+        <div>
+          <p class="talk-title"><span class="talk-badge">Invited</span>Values Encoded in Orbitofrontal Cortex Are Causally Related to Economic Choices</p>
+          <p class="talk-detail">Yale Neuroeconomics Forum · Yale University</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2020</div>
+        <div>
+          <p class="talk-title">Values Encoded in Orbitofrontal Cortex Are Causally Related to Economic Choices</p>
+          <p class="talk-detail">Society for Neuroeconomics · Virtual</p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <h2>Teaching & Mentoring</h2>
+    <ul class="talk-list">
+
+      <li class="talk-item">
+        <div class="talk-year">2025</div>
+        <div>
+          <p class="talk-title">Neuroscience of Social Interaction — Guest Lecturer</p>
+          <p class="talk-detail">Yale University</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2021</div>
+        <div>
+          <p class="talk-title">Neuromatch Academy — Computational Neuroscience</p>
+          <p class="talk-detail">Lead Teaching Assistant</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2017</div>
+        <div>
+          <p class="talk-title">Laboratory of Neurophysiology — Teaching Assistant</p>
+          <p class="talk-detail">Washington University in St. Louis</p>
+        </div>
+      </li>
+
+      <li class="talk-item">
+        <div class="talk-year">2014</div>
+        <div>
+          <p class="talk-title">Current Topics on Biochemistry — Teaching Assistant</p>
+          <p class="talk-detail">Peking University</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div style="margin-top: 2.5rem;">
+      <h2 style="margin-bottom: 1rem;">Mentees</h2>
+      <p style="font-size: 0.95rem; color: #3a3730; line-height: 1.8;">
+        <strong>Yale University</strong> (2022–present): Gargi Nandy, Jamie Masthay, Nyomi Hudson, Jing Yuan, Ali Guo<br>
+        <strong>Washington University in St. Louis</strong> (2017–2022): Jiaxin Tu, Heejae Choi
+      </p>
+    </div>
   </section>
 
   <!-- FUNDING -->
