@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weikang Shi | Neuroscientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f5f1;
+      --ink: #1a1814;
+      --muted: #7a7570;
+      --accent: #3a5a40;
+      --rule: #d8d4cc;
+      --max: 760px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+      padding: 0.75rem 2rem;
+    }
+    nav ul {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--ink); }
+    nav .name {
+      margin-right: auto;
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* LAYOUT */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    section {
+      padding-top: 5rem;
+    }
+
+    h2 {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* HERO */
+    #about {
+      padding-top: 6rem;
+    }
+    .hero-name {
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+    .hero-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+    .hero-bio {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #3a3730;
+      max-width: 640px;
+    }
+    .hero-bio p + p { margin-top: 1rem; }
+
+    .contact-line {
+      margin-top: 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .contact-line a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-line a:hover { text-decoration: underline; }
+
+    /* RESEARCH */
+    .research-intro {
+      font-size: 1.05rem;
+      color: #3a3730;
+      margin-bottom: 2rem;
+      max-width: 640px;
+    }
+
+    .research-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .pillar {
+      border: 1px solid var(--rule);
+      padding: 1.25rem 1.5rem;
+      border-radius: 2px;
+    }
+    .pillar-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .pillar p {
+      font-size: 0.95rem;
+      color: #3a3730;
+      line-height: 1.6;
+    }
+
+    /* PUBLICATIONS */
+    .pub-list { list-style: none; }
+    .pub-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pub-item:first-child { border-top: none; }
+    .pub-authors {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+    .pub-authors strong {
+      color: var(--ink);
+      font-weight: 400;
+    }
+    .pub-title {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 0.25rem;
+    }
+    .pub-journal {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+    .pub-journal .highlight {
+      color: var(--accent);
+      font-weight: 400;
+    }
+    .pub-badge {
+      display: inline-block;
+      margin-left: 0.6rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: white;
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+
+    /* FUNDING */
+    .funding-list { list-style: none; }
+    .funding-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .funding-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--muted);
+      padding-top: 0.15rem;
+    }
+    .funding-title {
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+    .funding-detail {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* AWARDS */
+    .award-list { list-style: none; }
+    .award-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .award-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--muted);
+      padding-top: 0.15rem;
+    }
+    .award-name {
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+    .award-org {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    /* CV DOWNLOAD */
+    .cv-block {
+      margin-top: 3rem;
+      padding: 2rem;
+      border: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .cv-block p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .cv-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--ink);
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .cv-link:hover { background: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule);
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 600px) {
+      .research-pillars { grid-template-columns: 1fr; }
+      .funding-item, .award-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      nav ul { gap: 1rem; flex-wrap: wrap; }
+      .cv-block { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a class="name" href="#about">Weikang Shi</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#funding">Funding</a></li>
+    <li><a href="#awards">Awards</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="hero-title">Postdoctoral Fellow &nbsp;·&nbsp; Yale University</p>
+    <h1 class="hero-name">Weikang Shi</h1>
+    <div class="hero-bio">
+      <p>
+        I study how the primate brain computes strategic social decisions, with a focus on 
+        prosocial behavior in freely moving animals. My work integrates computational 
+        neuroethology, naturalistic behavioral paradigms, and large-scale neural recordings 
+        to link social strategies to their underlying neural computations.
+      </p>
+      <p>
+        My long-term goal is to build a circuit-level model of how the cortico-striatal 
+        circuit generates complex prosocial decisions.
+      </p>
+      <p>
+        I work with Drs. Steve Chang, Anirvan Nandy, and Monika Jadi at Yale's Wu Tsai Institute, 
+        supported by an NIH K99 Pathway to Independence Award.
+      </p>
+    </div>
+    <p class="contact-line">
+      New Haven, CT &nbsp;·&nbsp; <a href="mailto:weikang.w.shi@gmail.com">weikang.w.shi@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <h2>Research</h2>
+    <p class="research-intro">
+      Social behavior requires integrating information about others' actions, intentions, and 
+      costs to make moment-to-moment decisions. My lab-in-training addresses this at three levels:
+    </p>
+    <div class="research-pillars">
+      <div class="pillar">
+        <p class="pillar-label">Behavior</p>
+        <p>Naturalistic cooperative paradigms in freely moving animal dyads, quantifying gaze, 
+        effort, and strategy in real time.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-label">Computation</p>
+        <p>Drift-diffusion and game-theoretic models to formalize how social evidence is 
+        accumulated and converted into action.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-label">Circuit</p>
+        <p>Large-scale recordings across prefrontal and striatal areas during naturalistic 
+        social interactions to identify the neural substrates of prosocial choice.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-label">Long-term vision</p>
+        <p>A mechanistic, circuit-level model of altruistic decisions — with translational 
+        relevance to disorders of social cognition.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="pub-list">
+
+      <li class="pub-item">
+        <p class="pub-authors"><strong>Weikang Shi</strong>, O.C. Meisner, M.P. Jadi, S.W.C. Chang, A.S. Nandy</p>
+        <p class="pub-title">Canonical decision computations underlie behavioral and neural signatures of cooperation in primates</p>
+        <p class="pub-journal"><span class="highlight">Neuron</span> (in press 2026) · bioRxiv 2025.10.22.683999<span class="pub-badge">In Press</span></p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-authors">O.C. Meisner*, <strong>Weikang Shi*</strong>, A. Nair, G. Nandy, M.P. Jadi, A.S. Nandy, S.W.C. Chang &nbsp;<em>(*equal contribution)</em></p>
+        <p class="pub-title">Diverse and flexible strategies enable successful cooperation in animal dyads</p>
+        <p class="pub-journal"><span class="highlight">Current Biology</span>, 35.18 (2025)</p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-authors">O.C. Meisner, <strong>Weikang Shi</strong>, N.A. Fagan, J. Greenwood, M.P. Jadi, A.S. Nandy, S.W.C. Chang</p>
+        <p class="pub-title">Development of an apparatus for automated pulling to study cooperative behaviors</p>
+        <p class="pub-journal"><span class="highlight">eLife</span>, 13 (2024): RP97088</p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-authors"><strong>Weikang Shi</strong>, O.C. Meisner, S. Blackmore, M.P. Jadi, A.S. Nandy, S.W.C. Chang</p>
+        <p class="pub-title">The orbitofrontal cortex: a goal-directed cognitive map framework for social and non-social behaviors</p>
+        <p class="pub-journal"><span class="highlight">Neurobiology of Learning and Memory</span>, 107793 (2023)</p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-authors">S. Ballesta, <strong>Weikang Shi</strong>, C. Padoa-Schioppa</p>
+        <p class="pub-title">Orbitofrontal cortex contributes to the comparison of values underlying economic choices</p>
+        <p class="pub-journal"><span class="highlight">Nature Communications</span>, 13.4405 (2022)</p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-authors"><strong>Weikang Shi</strong>, S. Ballesta, C. Padoa-Schioppa</p>
+        <p class="pub-title">Neuronal Origins of Reduced Accuracy and Biases in Economic Choices Under Sequential Offers</p>
+        <p class="pub-journal"><span class="highlight">eLife</span>, 11 (2022): e75910</p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-authors"><strong>Weikang Shi</strong>, S. Ballesta, C. Padoa-Schioppa</p>
+        <p class="pub-title">Economic Choices with Simultaneous or Sequential Offers Rely on the Same Neural Circuit</p>
+        <p class="pub-journal"><span class="highlight">Journal of Neuroscience</span>, 42.1 (2022): 33–43</p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-authors">S. Ballesta*, <strong>Weikang Shi*</strong>, K.E. Conen, C. Padoa-Schioppa &nbsp;<em>(*equal contribution)</em></p>
+        <p class="pub-title">Values Encoded in Orbitofrontal Cortex Are Causally Related to Economic Choices</p>
+        <p class="pub-journal"><span class="highlight">Nature</span>, 588 (2020): 450–453</p>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- FUNDING -->
+  <section id="funding">
+    <h2>Funding & Fellowships</h2>
+    <ul class="funding-list">
+      <li class="funding-item">
+        <div class="funding-year">2026</div>
+        <div>
+          <p class="funding-title">NIH Pathway to Independence Award (K99)</p>
+          <p class="funding-detail">NIMH K99MH142687 · Cortical-Striatal Circuit Mechanisms Underlying Altruistic Decisions</p>
+        </div>
+      </li>
+      <li class="funding-item">
+        <div class="funding-year">2025</div>
+        <div>
+          <p class="funding-title">BSTP Postdoctoral Fellowship (T32)</p>
+          <p class="funding-detail">T32MH014276 · Yale University · Two-Year Fellowship</p>
+        </div>
+      </li>
+      <li class="funding-item">
+        <div class="funding-year">2022</div>
+        <div>
+          <p class="funding-title">Wu Tsai Institute Postdoctoral Fellowship</p>
+          <p class="funding-detail">Yale University · Three-Year Fellowship</p>
+        </div>
+      </li>
+      <li class="funding-item">
+        <div class="funding-year">2017</div>
+        <div>
+          <p class="funding-title">Cognitive, Computational and Systems Neuroscience Predoctoral Fellowship</p>
+          <p class="funding-detail">Washington University in St. Louis</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <h2>Awards</h2>
+    <ul class="award-list">
+      <li class="award-item">
+        <div class="award-year">2026</div>
+        <div>
+          <p class="award-name">Young Investigator Award</p>
+          <p class="award-org">Marmoset Bioscience Symposium</p>
+        </div>
+      </li>
+      <li class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <p class="award-name">Best Poster Award</p>
+          <p class="award-org">Larry J. Young Memorial Research Symposium</p>
+        </div>
+      </li>
+      <li class="award-item">
+        <div class="award-year">2023</div>
+        <div>
+          <p class="award-name">Best Poster Award</p>
+          <p class="award-org">Society for Social Neuroscience</p>
+        </div>
+      </li>
+      <li class="award-item">
+        <div class="award-year">2022</div>
+        <div>
+          <p class="award-name">Best Dissertation Award</p>
+          <p class="award-org">Society for Neuroeconomics</p>
+        </div>
+      </li>
+      <li class="award-item">
+        <div class="award-year">2021</div>
+        <div>
+          <p class="award-name">James L. O'Leary Prize for Research in Neuroscience — Finalist</p>
+          <p class="award-org">Washington University in St. Louis</p>
+        </div>
+      </li>
+      <li class="award-item">
+        <div class="award-year">2018</div>
+        <div>
+          <p class="award-name">Thach Award — Best Poster Presentation</p>
+          <p class="award-org">Washington University in St. Louis</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="cv-block">
+      <p>Full curriculum vitae including talks, teaching, and service.</p>
+      <a href="CV_WeikangShi.pdf" class="cv-link">Download CV</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Weikang Shi &nbsp;·&nbsp; Yale University &nbsp;·&nbsp; Updated April 2026</p>
+</footer>
+
+</body>
+</html>
