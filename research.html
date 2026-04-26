@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Weikang Shi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f5f1;
+      --ink: #1a1814;
+      --muted: #7a7570;
+      --accent: #3a5a40;
+      --rule: #d8d4cc;
+      --max: 760px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+      padding: 0.75rem 2rem;
+    }
+    nav ul {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--ink); }
+    nav a.active { color: var(--accent); }
+    nav .name {
+      margin-right: auto;
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* LAYOUT */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    section {
+      padding-top: 5rem;
+    }
+
+    h2 {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      margin-top: 2.5rem;
+    }
+
+    h3:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding-top: 5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 0;
+    }
+
+    .page-header h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header .subtitle {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* RESEARCH BLOCKS */
+    .research-theme {
+      padding-top: 3.5rem;
+    }
+
+    .theme-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .theme-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+      line-height: 1.3;
+    }
+
+    .theme-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3.5rem 0 0;
+    }
+
+    /* PAPER REFS */
+    .paper-refs {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .paper-refs p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .paper-refs a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .paper-refs a:hover {
+      text-decoration: underline;
+    }
+
+    .paper-refs .ref-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FUTURE SECTION */
+    .future-aim {
+      margin-top: 2rem;
+    }
+
+    .aim-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      nav ul { gap: 1rem; flex-wrap: wrap; }
+      body { font-size: 16px; }
+      .theme-title { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a class="name" href="index.html">Weikang Shi</a></li>
+    <li><a href="index.html#research">Overview</a></li>
+    <li><a href="index.html#funding">Funding</a></li>
+    <li><a href="index.html#publications">Publications</a></li>
+    <li><a href="index.html#talks">Talks</a></li>
+    <li><a href="index.html#teaching">Teaching</a></li>
+    <li><a href="index.html#awards">Awards</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <div class="page-header">
+    <p class="subtitle">Research in depth</p>
+    <h1>How does the brain compute strategic social decisions?</h1>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <p>
+      My research program is dedicated to understanding how neural circuits compute adaptive, 
+      strategic decisions — in both individual and social contexts. My training across two 
+      complementary model systems has given me a principled framework for linking behavior, 
+      computation, and circuit-level mechanisms. My long-term goal is to build a mechanistic 
+      model of how the cortico-striatal circuit generates prosocial decisions, with translational 
+      relevance to neuropsychiatric disorders and to the development of social agents in AI.
+    </p>
+  </section>
+
+  <hr class="theme-divider">
+
+  <!-- THEME 1: OFC & ECONOMIC CHOICE -->
+  <div class="research-theme" id="ofc">
+    <p class="theme-label">PhD work · Washington University in St. Louis</p>
+    <p class="theme-title">Causal function of orbitofrontal cortex in economic decision-making</p>
+
+    <p>
+      How does value get computed in the brain, and how does that computation drive choice? 
+      My doctoral work in Dr. Camillo Padoa-Schioppa's lab addressed these questions using 
+      microstimulation and single-unit electrophysiology in macaques performing economic 
+      choice tasks.
+    </p>
+
+    <h3>OFC activity is causally related to economic choices</h3>
+    <p>
+      A central question in decision neuroscience is whether neural activity in a given region 
+      merely correlates with behavior, or actually drives it. Using microstimulation at varying 
+      current levels, we showed that OFC activity is causally linked to economic choices: 
+      low-current stimulation facilitated value encoding and biased choices toward the 
+      stimulated option, while high-current stimulation disrupted value representations and 
+      impaired decision-making. Notably, even very low currents could disrupt choices — but 
+      specifically at the value comparison stage rather than the valuation stage itself, 
+      suggesting that distinct current levels engage different computational processes and 
+      possibly different cell types within the OFC.
+    </p>
+
+    <h3>A stable OFC circuit supports both simultaneous and sequential offers</h3>
+    <p>
+      Economic decisions can unfold in different formats — offers may be presented 
+      simultaneously or one at a time. We asked whether the OFC circuit adapts to these 
+      different task structures or whether a single underlying circuit supports both. By 
+      randomly interleaving simultaneous and sequential trials, we identified the same 
+      functional cell populations in both conditions, demonstrating that the OFC operates 
+      as a single, stable decision circuit across diverse economic contexts.
+    </p>
+
+    <h3>Neural origins of decision variability</h3>
+    <p>
+      Choices are not perfectly consistent — they vary across trials and conditions in 
+      systematic ways. Using the two-task paradigm, we dissected three distinct sources of 
+      variability under sequential offers: decision noise (noisier choices), order bias 
+      (favoring the second offer), and preference bias (amplified existing preferences). Each 
+      phenomenon mapped onto a distinct neural process: noisier decisions correlated with 
+      weaker valuation signals, while both order and preference biases correlated with 
+      the value comparison process. This decomposition clarified how OFC valuation and 
+      comparison mechanisms each contribute differently to behavioral variability.
+    </p>
+
+    <div class="paper-refs">
+      <span class="ref-label">Related publications</span>
+      <p>Ballesta*, Shi* et al. Values encoded in orbitofrontal cortex are causally related to economic choices. <a href="https://doi.org/10.1038/s41586-020-2880-x" target="_blank"><em>Nature</em>, 588 (2020)</a></p>
+      <p>Ballesta, Shi, Padoa-Schioppa. Orbitofrontal cortex contributes to the comparison of values underlying economic choices. <a href="https://doi.org/10.1038/s41467-022-32199-y" target="_blank"><em>Nature Communications</em>, 13 (2022)</a></p>
+      <p>Shi et al. Economic choices with simultaneous or sequential offers rely on the same neural circuit. <a href="https://doi.org/10.1523/JNEUROSCI.1265-21.2021" target="_blank"><em>Journal of Neuroscience</em>, 42 (2022)</a></p>
+      <p>Shi et al. Neuronal origins of reduced accuracy and biases in economic choices under sequential offers. <a href="https://doi.org/10.7554/eLife.75910" target="_blank"><em>eLife</em>, 11 (2022)</a></p>
+    </div>
+  </div>
+
+  <hr class="theme-divider">
+
+  <!-- THEME 2: COOPERATIVE BEHAVIOR -->
+  <div class="research-theme" id="cooperation">
+    <p class="theme-label">Postdoctoral work · Yale University</p>
+    <p class="theme-title">Neural mechanisms of cooperative social decisions in freely moving animals</p>
+
+    <p>
+      As a Wu Tsai Postdoctoral Fellow at Yale, working with Drs. Steve Chang, Anirvan Nandy, 
+      and Monika Jadi, I extended my decision neuroscience framework to cooperative social 
+      behavior. A key challenge in social neuroscience is that most paradigms are artificial 
+      and constrained. My work has focused on developing tools and paradigms that allow 
+      naturalistic, freely-moving social interactions to be studied at neural resolution.
+    </p>
+
+    <h3>An integrated platform for naturalistic social neuroscience</h3>
+    <p>
+      I co-developed a platform combining a cooperative lever-pulling apparatus, 
+      deep-learning behavioral tracking (DeepLabCut + Anipose for 3D reconstruction), and 
+      a custom wireless high-density neural recording system. This enables simultaneous 
+      measurement of behavior and neural activity in freely interacting dyads — a 
+      methodological advance that makes the subsequent scientific questions tractable.
+    </p>
+
+    <h3>Diverse strategies enable successful cooperation</h3>
+    <p>
+      Using Bayesian models to characterize the moment-to-moment dynamics of cooperative 
+      interactions, we found that dyads do not converge on a single fixed strategy. Instead, 
+      they develop diverse and flexible behavioral repertoires — and this flexibility is 
+      itself a key predictor of cooperative success. This work established a quantitative 
+      framework for characterizing social strategy at the individual level.
+    </p>
+
+    <h3>Gaze-dependent evidence accumulation in dmPFC underlies cooperative decisions</h3>
+    <p>
+      In a first-author study combining neural recordings with drift-diffusion modeling, 
+      I showed that social gaze acts as a gating mechanism for evidence accumulation: 
+      animals sample their partner's behavior through directed gaze, and this information 
+      is integrated in the dorsomedial prefrontal cortex (dmPFC) to drive cooperative 
+      decisions. Neural population dynamics in dmPFC track the accumulation process in 
+      real time, linking a specific computational framework to its circuit substrate. 
+      This work establishes the dmPFC as a key node for social evidence integration 
+      during naturalistic cooperation.
+    </p>
+
+    <h3>OFC as a goal-directed cognitive map for social and non-social behavior</h3>
+    <p>
+      Bridging my PhD and postdoctoral work, we proposed that the OFC functions as a 
+      goal-directed cognitive map — integrating task-relevant information to guide flexible 
+      behavior across both social and non-social contexts. This framework predicts that OFC 
+      neural computations in social settings should reflect the integration of social 
+      information (partner state, social history) alongside non-social variables 
+      (reward, cost), producing the diverse strategies observed behaviorally.
+    </p>
+
+    <div class="paper-refs">
+      <span class="ref-label">Related publications</span>
+      <p>Shi*, Meisner* et al. Canonical decision computations underlie behavioral and neural signatures of cooperation in primates. <a href="https://doi.org/10.1101/2025.10.22.683999" target="_blank"><em>Neuron</em> (in press 2026)</a></p>
+      <p>Meisner*, Shi* et al. Diverse and flexible strategies enable successful cooperation in animal dyads. <a href="https://doi.org/10.1016/j.cub.2025.08.005" target="_blank"><em>Current Biology</em>, 35 (2025)</a></p>
+      <p>Meisner, Shi et al. Development of an apparatus for automated pulling to study cooperative behaviors. <a href="https://doi.org/10.7554/eLife.97088" target="_blank"><em>eLife</em>, 13 (2024)</a></p>
+      <p>Shi et al. The orbitofrontal cortex: a goal-directed cognitive map framework for social and non-social behaviors. <a href="https://doi.org/10.1016/j.nlm.2023.107793" target="_blank"><em>Neurobiology of Learning and Memory</em>, 203 (2023)</a></p>
+    </div>
+  </div>
+
+  <hr class="theme-divider">
+
+  <!-- THEME 3: FUTURE DIRECTIONS -->
+  <div class="research-theme" id="future">
+    <p class="theme-label">Future directions · Independent research program</p>
+    <p class="theme-title">Cortico-striatal circuit mechanisms of strategic social decisions</p>
+
+    <p>
+      My independent research program will build a circuit-level, mechanistic understanding 
+      of how the brain navigates strategic social interactions under conditions of inequity — 
+      when costs and rewards are unevenly distributed between agents. The central hypothesis 
+      is that communication between the dorsomedial prefrontal cortex (dmPFC) and the 
+      dorsal striatum (DS) implements the computations that guide these choices.
+    </p>
+
+    <div class="future-aim">
+      <p class="aim-tag">Aim 1</p>
+      <p>
+        A model-free approach to discover cooperative strategies and their neural correlates 
+        in dmPFC under effort inequity. Using a novel Effort-Inequity Cooperation task with 
+        systematic variation of self- and partner-cost, combined with high-density wireless 
+        recordings and Dynamic Bayesian Network analysis, we will characterize the behavioral 
+        strategy space and its dmPFC representation.
+      </p>
+    </div>
+
+    <div class="future-aim">
+      <p class="aim-tag">Aim 2</p>
+      <p>
+        A model-based approach to dissect the cognitive mechanisms of strategic decisions. 
+        Building on the DDM framework from my postdoc, I will test how effort costs modulate 
+        specific decision parameters — self-cost biasing the starting point, partner-cost 
+        modulating drift rate — and link these model parameters directly to dmPFC population 
+        dynamics. A complementary reinforcement learning framework will address how strategies 
+        are learned and updated over time.
+      </p>
+    </div>
+
+    <div class="future-aim">
+      <p class="aim-tag">Aim 3</p>
+      <p>
+        Circuit-level investigation of cortico-striatal dynamics. Using simultaneous 
+        multi-region wireless recordings from dmPFC and dorsal striatum, we will test whether 
+        dmPFC encodes high-level strategic variables while the striatum translates these into 
+        action policies. A Multi-Agent Recurrent Neural Network (MARNN) model with separate 
+        dmPFC and DS modules will synthesize findings into a generalized computational framework.
+      </p>
+    </div>
+
+    <p style="margin-top: 2rem;">
+      In the longer term, my lab will pursue causal interventions (optogenetics, wireless 
+      microstimulation, focused ultrasound) to move beyond correlation to circuit-level 
+      causation; expand to more complex game-theoretic paradigms and group social settings; 
+      and use the principles uncovered to inform the development of social agents in AI that 
+      can navigate inequity and cooperate strategically.
+    </p>
+  </div>
+
+</main>
+</body>
+</html>
