@@ -207,7 +207,39 @@
       margin-bottom: 0.3rem;
     }
 
-    /* MOBILE */
+    /* FIGURES */
+    .figure-row {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 1.5rem;
+    }
+    .figure-row.flip {
+      grid-template-columns: 340px 1fr;
+    }
+    .figure-row.flip .fig-text { order: 2; }
+    .figure-row.flip .fig-img { order: 1; }
+    .fig-img img {
+      width: 100%;
+      border-radius: 3px;
+      border: 1px solid var(--rule);
+    }
+    .fig-caption {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 650px) {
+      .figure-row, .figure-row.flip {
+        grid-template-columns: 1fr;
+      }
+      .figure-row.flip .fig-text { order: 1; }
+      .figure-row.flip .fig-img { order: 2; }
+    }
     @media (max-width: 600px) {
       nav ul { gap: 1rem; flex-wrap: wrap; }
       body { font-size: 16px; }
@@ -254,23 +286,39 @@
     <p class="theme-label">PhD work · Washington University in St. Louis</p>
     <p class="theme-title">Causal function of orbitofrontal cortex in economic decision-making</p>
 
-    <p>
-      A foundational question in decision neuroscience is whether neural activity in a region 
-      merely correlates with behavior, or actually drives it. Working with Dr. Camillo 
-      Padoa-Schioppa, we used microstimulation at varying current levels to show that OFC 
-      activity causally shapes economic choices: low currents facilitated value encoding and 
-      biased choices, while high currents disrupted value representations. Strikingly, even 
-      very low currents altered choices specifically at the value comparison stage rather than 
-      the valuation stage, revealing dissociable computational processes within OFC.
-    </p>
+    <div class="figure-row">
+      <div class="fig-text">
+        <p>
+          A foundational question in decision neuroscience is whether neural activity in a region 
+          merely correlates with behavior, or actually drives it. Working with Dr. Camillo 
+          Padoa-Schioppa, we used microstimulation at varying current levels to show that OFC 
+          activity causally shapes economic choices: low currents facilitated value encoding and 
+          biased choices, while high currents disrupted value representations. Strikingly, even 
+          very low currents altered choices specifically at the value comparison stage rather than 
+          the valuation stage, revealing dissociable computational processes within OFC.
+        </p>
+      </div>
+      <div class="fig-img">
+        <img src="microstimulation_setup.png" alt="Microstimulation setup and OFC causal effect on choices" />
+        <p class="fig-caption">Microstimulation of OFC causally biases economic choices.</p>
+      </div>
+    </div>
 
-    <p>
-      We further showed that the same OFC circuit supports decisions whether offers are 
-      presented simultaneously or sequentially, and dissected three distinct sources of 
-      decision variability under sequential offers — decision noise, order bias, and preference 
-      bias — each mapping onto a distinct neural process. Together, this work established a 
-      mechanistic, causal account of how OFC computes economic choices.
-    </p>
+    <div class="figure-row flip">
+      <div class="fig-text">
+        <p>
+          We further showed that the same OFC circuit supports decisions whether offers are 
+          presented simultaneously or sequentially, and dissected three distinct sources of 
+          decision variability under sequential offers — decision noise, order bias, and preference 
+          bias — each mapping onto a distinct neural process. Together, this work established a 
+          mechanistic, causal account of how OFC computes economic choices.
+        </p>
+      </div>
+      <div class="fig-img">
+        <img src="ofc_circuit.jpg" alt="OFC decision circuit diagram" />
+        <p class="fig-caption">The OFC decision circuit underlying value computation and comparison.</p>
+      </div>
+    </div>
 
     <div class="paper-refs">
       <span class="ref-label">Related publications</span>
@@ -288,26 +336,46 @@
     <p class="theme-label">Postdoctoral work · Yale University</p>
     <p class="theme-title">Neural mechanisms of cooperative social decisions in freely moving animals</p>
 
-    <p>
-      As a Wu Tsai Postdoctoral Fellow and NIMH T32 fellow with Drs. Steve Chang, Anirvan 
-      Nandy, and Monika Jadi, I extended my decision neuroscience framework to cooperative 
-      social behavior. Most social neuroscience paradigms are artificial and constrained. 
-      To address this, I co-developed an integrated platform combining a naturalistic 
-      cooperative task, markerless behavioral tracking, and custom wireless high-density 
-      neural recordings, enabling simultaneous measurement of behavior and neural activity 
-      in freely interacting dyads.
-    </p>
+    <div class="figure-row">
+      <div class="fig-text">
+        <p>
+          As a Wu Tsai Postdoctoral Fellow and NIMH T32 fellow with Drs. Steve Chang, Anirvan 
+          Nandy, and Monika Jadi, I extended my decision neuroscience framework to cooperative 
+          social behavior. Most social neuroscience paradigms are artificial and constrained. 
+          To address this, I co-developed an integrated platform combining a naturalistic 
+          cooperative task, markerless behavioral tracking, and custom wireless high-density 
+          neural recordings, enabling simultaneous measurement of behavior and neural activity 
+          in freely interacting dyads.
+        </p>
+        <p>
+          Using this platform, we found that dyads develop diverse and flexible behavioral 
+          repertoires rather than converging on a fixed strategy, and that this flexibility 
+          predicts cooperative success. Dynamic Bayesian Network analysis revealed two distinct 
+          classes of cooperative strategy: gaze-dependent coordination, where animals actively 
+          monitor their partner before acting, and gaze-independent rhythm-based coordination.
+        </p>
+      </div>
+      <div class="fig-img">
+        <img src="social_strategies.jpg" alt="Cooperative strategies in animal dyads" />
+        <p class="fig-caption">Diverse cooperative strategies identified using Dynamic Bayesian Networks.</p>
+      </div>
+    </div>
 
-    <p>
-      Using this platform, we found that dyads develop diverse and flexible behavioral 
-      repertoires rather than converging on a fixed strategy, and that this flexibility 
-      predicts cooperative success. Social gaze played a central role: animals actively 
-      monitored their partner, and this sampling was tightly coupled to cooperative actions. 
-      Applying a drift-diffusion model, we showed that gaze gates evidence accumulation in 
-      the dorsomedial prefrontal cortex, with neural population dynamics tracking the 
-      accumulation process in real time and establishing dmPFC as a key node for social 
-      evidence integration.
-    </p>
+    <div class="figure-row flip">
+      <div class="fig-text">
+        <p>
+          Social gaze played a central role in cooperative decisions. Applying a drift-diffusion 
+          model, we showed that gaze gates evidence accumulation in the dorsomedial prefrontal 
+          cortex, with neural population dynamics tracking the accumulation process in real time 
+          and establishing dmPFC as a key node for social evidence integration during naturalistic 
+          cooperation.
+        </p>
+      </div>
+      <div class="fig-img">
+        <img src="social_evidence_accumulation.png" alt="Social evidence accumulation in dmPFC" />
+        <p class="fig-caption">Gaze-dependent social evidence accumulation in dorsomedial prefrontal cortex.</p>
+      </div>
+    </div>
 
     <div class="paper-refs">
       <span class="ref-label">Related publications</span>
@@ -325,30 +393,37 @@
     <p class="theme-label">Future directions · Independent research program</p>
     <p class="theme-title">Cortico-striatal circuit mechanisms of strategic prosocial decisions</p>
 
-    <p>
-      My planned research program will build a mechanistic understanding of how the brain 
-      navigates strategic social interactions under conditions of inequity. The central 
-      hypothesis is that communication between the dorsomedial prefrontal cortex and the 
-      dorsal striatum implements the computations that guide these choices. The near-term 
-      work will take two complementary approaches: a model-free approach using Dynamic 
-      Bayesian Networks to discover the repertoire of cooperative strategies animals develop 
-      under effort inequity and their neural correlates in dmPFC, and a model-based approach 
-      using drift-diffusion and reinforcement learning models to formalize the cognitive 
-      mechanisms underlying those strategies and link model parameters directly to neural 
-      population dynamics.
-    </p>
-
-    <p>
-      The circuit-level aim (R00 phase) will expand to simultaneous wireless recordings from 
-      dmPFC and dorsal striatum, testing whether dmPFC encodes high-level strategic variables 
-      while the striatum translates these into action policies. A Multi-Agent Recurrent Neural 
-      Network model, developed in collaboration with computational neuroscientists, will 
-      simulate the cortico-striatal circuit and generate testable predictions about circuit 
-      function. In the longer term, the program will pursue causal circuit manipulations 
-      through optogenetics and wireless microstimulation, expand to more complex game-theoretic 
-      paradigms and group social settings, and use the principles uncovered to inform the 
-      development of more prosocial AI agents.
-    </p>
+    <div class="figure-row">
+      <div class="fig-text">
+        <p>
+          My planned research program will build a mechanistic understanding of how the brain 
+          navigates strategic social interactions under conditions of inequity. The central 
+          hypothesis is that communication between the dorsomedial prefrontal cortex and the 
+          dorsal striatum implements the computations that guide these choices. The near-term 
+          work will take two complementary approaches: a model-free approach using Dynamic 
+          Bayesian Networks to discover the repertoire of cooperative strategies animals develop 
+          under effort inequity and their neural correlates in dmPFC, and a model-based approach 
+          using drift-diffusion and reinforcement learning models to formalize the cognitive 
+          mechanisms underlying those strategies and link model parameters directly to neural 
+          population dynamics.
+        </p>
+        <p>
+          The circuit-level aim (R00 phase) will expand to simultaneous wireless recordings from 
+          dmPFC and dorsal striatum, testing whether dmPFC encodes high-level strategic variables 
+          while the striatum translates these into action policies. A Multi-Agent Recurrent Neural 
+          Network model, developed in collaboration with computational neuroscientists, will 
+          simulate the cortico-striatal circuit and generate testable predictions about circuit 
+          function. In the longer term, the program will pursue causal circuit manipulations 
+          through optogenetics and wireless microstimulation, expand to more complex game-theoretic 
+          paradigms and group social settings, and use the principles uncovered to inform the 
+          development of more prosocial AI agents.
+        </p>
+      </div>
+      <div class="fig-img">
+        <img src="future_direction.png" alt="Future research directions: cortico-striatal circuit" />
+        <p class="fig-caption">Planned research program: from cooperative behavior to cortico-striatal circuit mechanisms.</p>
+      </div>
+    </div>
   </div>
 
 </main>
