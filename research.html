@@ -210,13 +210,19 @@
     /* FIGURES */
     .figure-row {
       display: grid;
-      grid-template-columns: 1fr 340px;
+      grid-template-columns: 1fr 270px;
       gap: 2.5rem;
       align-items: start;
       margin-bottom: 1.5rem;
     }
     .figure-row.flip {
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 270px 1fr;
+    }
+    .figure-row.small {
+      grid-template-columns: 1fr 170px;
+    }
+    .figure-row.flip.small {
+      grid-template-columns: 170px 1fr;
     }
     .figure-row.flip .fig-text { order: 2; }
     .figure-row.flip .fig-img { order: 1; }
@@ -338,7 +344,7 @@
       </div>
     </div>
 
-    <div class="figure-row flip">
+    <div class="figure-row flip small">
       <div class="fig-text">
         <p>
           We further showed that the same OFC circuit supports decisions whether offers are 
