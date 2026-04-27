@@ -224,6 +224,40 @@
       width: 100%;
       border-radius: 3px;
       border: 1px solid var(--rule);
+      background: #ffffff;
+      cursor: zoom-in;
+      transition: opacity 0.2s;
+    }
+    .fig-img img:hover { opacity: 0.85; }
+    .fig-caption { display: none; }
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 3px;
+      background: #ffffff;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-caption {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.08em;
+      text-align: center;
+      max-width: 600px;
     }
     .fig-caption {
       font-family: 'DM Mono', monospace;
@@ -286,7 +320,7 @@
     <p class="theme-label">PhD work · Washington University in St. Louis</p>
     <p class="theme-title">Causal function of orbitofrontal cortex in economic decision-making</p>
 
-    <div class="figure-row" style="grid-template-columns: 1fr 380px;">
+    <div class="figure-row" style="grid-template-columns: 1fr 180px;">
       <div class="fig-text">
         <p>
           A foundational question in decision neuroscience is whether neural activity in a region 
@@ -304,7 +338,7 @@
       </div>
     </div>
 
-    <div class="figure-row flip" style="grid-template-columns: 200px 1fr;">
+    <div class="figure-row flip" style="grid-template-columns: 120px 1fr;">
       <div class="fig-text">
         <p>
           We further showed that the same OFC circuit supports decisions whether offers are 
@@ -336,7 +370,7 @@
     <p class="theme-label">Postdoctoral work · Yale University</p>
     <p class="theme-title">Neural mechanisms of cooperative social decisions in freely moving animals</p>
 
-    <div class="figure-row" style="grid-template-columns: 1fr 340px;">
+    <div class="figure-row" style="grid-template-columns: 1fr 170px;">
       <div class="fig-text">
         <p>
           As a Wu Tsai Postdoctoral Fellow and NIMH T32 fellow with Drs. Steve Chang, Anirvan 
@@ -361,7 +395,7 @@
       </div>
     </div>
 
-    <div class="figure-row flip" style="grid-template-columns: 340px 1fr;">
+    <div class="figure-row flip" style="grid-template-columns: 170px 1fr;">
       <div class="fig-text">
         <p>
           Social gaze played a central role in cooperative decisions. Applying a drift-diffusion 
@@ -393,7 +427,7 @@
     <p class="theme-label">Future directions · Independent research program</p>
     <p class="theme-title">Cortico-striatal circuit mechanisms of strategic prosocial decisions</p>
 
-    <div class="figure-row" style="grid-template-columns: 1fr 425px;">
+    <div class="figure-row" style="grid-template-columns: 1fr 200px;">
       <div class="fig-text">
         <p>
           My planned research program will build a mechanistic understanding of how the brain 
@@ -428,5 +462,35 @@
   </div>
 
 </main>
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <img id="lightbox-img" src="" alt="" />
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  document.querySelectorAll('.fig-img img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      const caption = img.closest('.fig-img').querySelector('.fig-caption');
+      lightboxCaption.textContent = caption ? caption.textContent : '';
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+
 </body>
 </html>
